@@ -1,6 +1,8 @@
 # Physics-Simulations
 Here I have collected some of the numerous research side projects I did throughout my carrier as a curious high school/university student.
 
+Feel free to contact me about these projects at misa.toman97@gmail.com and I will happily answer!
+
 ## Solar wind simulation.
 
 The goal of this simulation is to convince me that the typical illustration of the Aurora Borealis explanation is correct. What is typically drawn is a particle revolving around the magnetic field lines in a helical motion. To demonstrate this, an initial volley of charged particles is launched at a magnetic dipole and the trajectory of these particles is plotted. We see that typical helical motion around magnetic field lines is seen but is highly squished.
