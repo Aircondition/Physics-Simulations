@@ -1,5 +1,5 @@
 # Physics-Simulations
-Here I have collected some of the numerous research side projects I did throughout my career as a curious high school/university student.
+Here I have collected a small sample of the numerous research side projects I did throughout my career as a curious high school/university student.
 
 Feel free to contact me about these projects at misa.toman97@gmail.com and I will happily answer!
 
