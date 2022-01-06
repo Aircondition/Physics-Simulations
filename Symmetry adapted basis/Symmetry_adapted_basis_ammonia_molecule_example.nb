@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    151731,       3924]
-NotebookOptionsPosition[    143676,       3798]
-NotebookOutlinePosition[    144102,       3815]
-CellTagsIndexPosition[    144059,       3812]
+NotebookDataLength[    185995,       4715]
+NotebookOptionsPosition[    177020,       4573]
+NotebookOutlinePosition[    177446,       4590]
+CellTagsIndexPosition[    177403,       4587]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -3268,10 +3268,18 @@ to ",
     RowBox[{"3", "v"}]], TraditionalForm]],
   FormatType->"TraditionalForm",ExpressionUUID->
   "dbd91e34-65a6-4ba4-8392-c587fa158620"],
+ ". For the purpose of animation I will construct real linear combinations of \
+SAB vectors with the same ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["t", "\[Mu]"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "1973849e-33f8-489e-bf3a-809f1aeeefeb"],
  "."
 }], "Text",
- CellChangeTimes->{{3.8504713590092945`*^9, 
-  3.850471410097954*^9}},ExpressionUUID->"e81974ab-7419-4da1-9a8c-\
+ CellChangeTimes->{{3.8504713590092945`*^9, 3.850471410097954*^9}, {
+  3.8504721116117935`*^9, 
+  3.850472159055768*^9}},ExpressionUUID->"e81974ab-7419-4da1-9a8c-\
 6709de1fc1bc"],
 
 Cell[CellGroupData[{
@@ -3592,7 +3600,7 @@ Cell[BoxData[
      RowBox[{"DynamicModule", "[", 
       RowBox[{
        RowBox[{"{", 
-        RowBox[{"pozicijaAtoma", "=", 
+        RowBox[{"atomPosition", "=", 
          RowBox[{"orbit", "+", 
           RowBox[{"0.25", "*", 
            RowBox[{"Sin", "[", "\[Tau]", "]"}], " ", 
@@ -3622,7 +3630,7 @@ Cell[BoxData[
                   "}"}], "[", 
                  RowBox[{"[", "#", "]"}], "]"}], "]"}], ",", 
                RowBox[{"Point", "@", 
-                RowBox[{"pozicijaAtoma", "[", 
+                RowBox[{"atomPosition", "[", 
                  RowBox[{"[", "#", "]"}], "]"}]}]}], "}"}], "&"}], "/@", 
             RowBox[{"Range", "@", "4"}]}], "}"}], "]"}], ",", 
          "\[IndentingNewLine]", 
@@ -3635,10 +3643,10 @@ Cell[BoxData[
               RowBox[{"Arrow", "[", 
                RowBox[{"{", 
                 RowBox[{
-                 RowBox[{"pozicijaAtoma", "[", 
+                 RowBox[{"atomPosition", "[", 
                   RowBox[{"[", "i", "]"}], "]"}], ",", 
                  RowBox[{
-                  RowBox[{"pozicijaAtoma", "[", 
+                  RowBox[{"atomPosition", "[", 
                    RowBox[{"[", "i", "]"}], "]"}], "+", 
                   RowBox[{
                    RowBox[{"Cos", "[", "\[Tau]", "]"}], " ", 
@@ -3706,14 +3714,15 @@ Cell[BoxData[
    3.8493040877828035`*^9, 3.8493041207034163`*^9}, {3.8493041526162186`*^9, 
    3.8493041528675885`*^9}, {3.849304249319312*^9, 3.8493043566862593`*^9}, {
    3.8493053260786552`*^9, 3.849305331769022*^9}, {3.849305496572421*^9, 
-   3.8493055344041705`*^9}, 3.8504715244041386`*^9},
+   3.8493055344041705`*^9}, 3.8504715244041386`*^9, {3.8504722016679363`*^9, 
+   3.850472229462515*^9}},
  CellLabel->
-  "In[173]:=",ExpressionUUID->"7a5166ce-1375-488e-94ff-4aa2c6d3dc50"],
+  "In[268]:=",ExpressionUUID->"7a5166ce-1375-488e-94ff-4aa2c6d3dc50"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`\[Tau]$$ = 8.571299213318335, 
+   DynamicModuleBox[{$CellContext`\[Tau]$$ = 2.2051824705824368`, 
     Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
     Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
     1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
@@ -3728,7 +3737,7 @@ Cell[BoxData[
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
         Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
          Typeset`skipInitDone$$}, "Body" :> Manipulate[
-        DynamicModule[{$CellContext`pozicijaAtoma = $CellContext`orbit + 
+        DynamicModule[{$CellContext`atomPosition = $CellContext`orbit + 
            0.25 Sin[$CellContext`\[Tau]$$] Partition[
               
               Part[$CellContext`SAB, $CellContext`\[Mu], $CellContext`t\[Mu], 
@@ -3741,14 +3750,14 @@ Cell[BoxData[
               PointSize[
                Part[{0.03, 0.03, 0.03, 0.1}, #]], 
               Point[
-               Part[$CellContext`pozicijaAtoma, #]]}& , 
+               Part[$CellContext`atomPosition, #]]}& , 
              Range[4]]}], 
           Graphics3D[
            Table[{Red, 
              Arrowheads[0.025], 
              Arrow[{
-               Part[$CellContext`pozicijaAtoma, GroupTheory`Symbols`i], 
-               Part[$CellContext`pozicijaAtoma, GroupTheory`Symbols`i] + 
+               Part[$CellContext`atomPosition, GroupTheory`Symbols`i], 
+               Part[$CellContext`atomPosition, GroupTheory`Symbols`i] + 
                Cos[$CellContext`\[Tau]$$] Part[
                   Partition[
                    
@@ -3789,9 +3798,775 @@ $CellContext`t\[Mu]]]]}],
    StripOnInput->False],
   Manipulate`InterpretManipulate[1]]], "Output",
  CellChangeTimes->{
-  3.849333609336057*^9, {3.8504715156494827`*^9, 3.850471528751731*^9}},
+  3.849333609336057*^9, {3.8504715156494827`*^9, 3.850471528751731*^9}, 
+   3.8504722331804934`*^9, 3.8504754060110607`*^9},
  CellLabel->
-  "Out[173]=",ExpressionUUID->"d1710717-4912-4f43-9d5b-4a7275777e5d"]
+  "Out[268]=",ExpressionUUID->"489c31ef-c059-44ea-955b-3238cf5d6b23"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["dvibDecomp"], "Input",
+ CellChangeTimes->{{3.8504745131792803`*^9, 3.8504745234427204`*^9}},
+ CellLabel->
+  "In[252]:=",ExpressionUUID->"dcfaff2f-8b24-410f-8c8e-4be083edfe59"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"2", " ", 
+    SubscriptBox["\<\"A\"\>", "\<\"1\"\>"]}], ",", "0", ",", 
+   RowBox[{"2", " ", "\<\"E\"\>"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.8504745236296806`*^9},
+ CellLabel->
+  "Out[252]=",ExpressionUUID->"b7c039d9-4546-4e44-9a10-380eac7f78c7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"concreteVibrations", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Partition", "[", 
+     RowBox[{"#", ",", "3"}], "]"}], "&"}], "/@", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"SAB", "[", 
+       RowBox[{"[", 
+        RowBox[{"1", ",", "1", ",", "1"}], "]"}], "]"}], "-", 
+      RowBox[{"SAB", "[", 
+       RowBox[{"[", 
+        RowBox[{"1", ",", "2", ",", "1"}], "]"}], "]"}], "+", 
+      RowBox[{"SAB", "[", 
+       RowBox[{"[", 
+        RowBox[{"1", ",", "3", ",", "1"}], "]"}], "]"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"SAB", "[", 
+       RowBox[{"[", 
+        RowBox[{"1", ",", "1", ",", "1"}], "]"}], "]"}], "+", 
+      RowBox[{"SAB", "[", 
+       RowBox[{"[", 
+        RowBox[{"1", ",", "2", ",", "1"}], "]"}], "]"}], "-", 
+      RowBox[{"SAB", "[", 
+       RowBox[{"[", 
+        RowBox[{"1", ",", "3", ",", "1"}], "]"}], "]"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"SAB", "[", 
+       RowBox[{"[", 
+        RowBox[{"3", ",", "2", ",", "1"}], "]"}], "]"}], "+", 
+      RowBox[{"SAB", "[", 
+       RowBox[{"[", 
+        RowBox[{"3", ",", "3", ",", "1"}], "]"}], "]"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"SAB", "[", 
+       RowBox[{"[", 
+        RowBox[{"3", ",", "2", ",", "2"}], "]"}], "]"}], "+", 
+      RowBox[{"SAB", "[", 
+       RowBox[{"[", 
+        RowBox[{"3", ",", "3", ",", "2"}], "]"}], "]"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"SAB", "[", 
+       RowBox[{"[", 
+        RowBox[{"3", ",", "2", ",", "1"}], "]"}], "]"}], "+", 
+      RowBox[{"SAB", "[", 
+       RowBox[{"[", 
+        RowBox[{"3", ",", "4", ",", "1"}], "]"}], "]"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"SAB", "[", 
+       RowBox[{"[", 
+        RowBox[{"3", ",", "2", ",", "2"}], "]"}], "]"}], "+", 
+      RowBox[{"SAB", "[", 
+       RowBox[{"[", 
+        RowBox[{"3", ",", "4", ",", "2"}], "]"}], "]"}]}]}], 
+    "}"}]}]}]], "Input",
+ CellChangeTimes->{{3.8504725306987877`*^9, 3.850472625140666*^9}, {
+   3.850472755957116*^9, 3.850472757972054*^9}, {3.85047322847682*^9, 
+   3.850473254131912*^9}, {3.8504733120144625`*^9, 3.8504733899087887`*^9}, {
+   3.8504734593331623`*^9, 3.850473467307296*^9}, {3.8504735072047358`*^9, 
+   3.850473516654991*^9}, {3.8504736363903337`*^9, 3.8504736816037617`*^9}, {
+   3.8504737213014684`*^9, 3.8504737246444283`*^9}, {3.850473839881382*^9, 
+   3.8504738425913677`*^9}, {3.850473874218943*^9, 3.850473874453013*^9}, {
+   3.8504739139979277`*^9, 3.8504739454443903`*^9}, {3.8504739831722126`*^9, 
+   3.850474024436208*^9}, {3.850474212977721*^9, 3.850474214305529*^9}, {
+   3.850474263068774*^9, 3.8504742855880365`*^9}, {3.8504743431509523`*^9, 
+   3.850474400035493*^9}, {3.850474771294069*^9, 3.8504747755602365`*^9}, {
+   3.85047485746014*^9, 3.850474885359421*^9}, {3.8504749415676284`*^9, 
+   3.8504749510733685`*^9}, {3.8504750897876973`*^9, 
+   3.8504751273256297`*^9}, {3.8504752373474617`*^9, 3.850475258149162*^9}, {
+   3.8504755061427174`*^9, 3.850475508286149*^9}, {3.850475548088631*^9, 
+   3.8504755778864*^9}, {3.8504756254645443`*^9, 3.8504756297702303`*^9}, {
+   3.850475691752713*^9, 3.850475695817313*^9}, 3.850475730294198*^9, {
+   3.850475810104765*^9, 3.8504758273317823`*^9}, {3.8504758763647995`*^9, 
+   3.8504758853006907`*^9}, 3.850475963175748*^9},
+ CellLabel->
+  "In[283]:=",ExpressionUUID->"891f500f-99f7-4fe7-a729-1b231b974cd5"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", 
+       RowBox[{"-", "1"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], ",", 
+       FractionBox[
+        SqrtBox["3"], "2"], ",", 
+       RowBox[{"-", "1"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], ",", 
+       RowBox[{"-", 
+        FractionBox[
+         SqrtBox["3"], "2"]}], ",", 
+       RowBox[{"-", "1"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], ",", 
+       FractionBox[
+        SqrtBox["3"], "2"], ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], ",", 
+       RowBox[{"-", 
+        FractionBox[
+         SqrtBox["3"], "2"]}], ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", 
+       RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["3", "4"]}], ",", 
+       RowBox[{"-", 
+        FractionBox[
+         SqrtBox["3"], "4"]}], ",", 
+       RowBox[{"-", 
+        FractionBox["1", "2"]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["3", "4"]}], ",", 
+       FractionBox[
+        SqrtBox["3"], "4"], ",", 
+       RowBox[{"-", 
+        FractionBox["1", "2"]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       FractionBox[
+        SqrtBox["3"], "4"], ",", 
+       FractionBox["1", "4"], ",", 
+       FractionBox[
+        SqrtBox["3"], "2"]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox[
+         SqrtBox["3"], "4"]}], ",", 
+       FractionBox["1", "4"], ",", 
+       RowBox[{"-", 
+        FractionBox[
+         SqrtBox["3"], "2"]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["3", "4"]}], ",", 
+       RowBox[{"-", 
+        FractionBox[
+         SqrtBox["3"], "4"]}], ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["3", "4"]}], ",", 
+       FractionBox[
+        SqrtBox["3"], "4"], ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       FractionBox[
+        SqrtBox["3"], "4"], ",", 
+       FractionBox["1", "4"], ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox[
+         SqrtBox["3"], "4"]}], ",", 
+       FractionBox["1", "4"], ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.8504735202478733`*^9, 3.8504735829972997`*^9, {3.850473639321943*^9, 
+   3.85047368230612*^9}, {3.8504737186615973`*^9, 3.850473728596217*^9}, 
+   3.8504738441534567`*^9, 3.8504738749837217`*^9, {3.850473921886801*^9, 
+   3.850473947303314*^9}, 3.8504740277941837`*^9, {3.8504742664220524`*^9, 
+   3.8504742862918453`*^9}, 3.850474350281773*^9, 3.8504744031598415`*^9, 
+   3.850474777460382*^9, {3.850474858279179*^9, 3.850474886061306*^9}, 
+   3.8504749533382945`*^9, {3.8504751080075426`*^9, 3.8504751291157255`*^9}, 
+   3.850475258660127*^9, 3.850475579318495*^9, {3.8504756303629932`*^9, 
+   3.850475656046253*^9}, 3.850475696614512*^9, 3.850475731315403*^9, 
+   3.8504758278481503`*^9, 3.850475892394025*^9, 3.8504759643384056`*^9},
+ CellLabel->
+  "Out[283]=",ExpressionUUID->"f35be6db-f39d-457f-8a02-6eacfcbd6d98"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"m", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Animate", "[", 
+     RowBox[{
+      RowBox[{"DynamicModule", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"atomPosition", "=", 
+          RowBox[{"orbit", "+", 
+           RowBox[{"0.25", "*", 
+            RowBox[{"Sin", "[", "\[Tau]", "]"}], " ", "*", "#"}]}]}], "}"}], 
+        ",", "\[IndentingNewLine]", 
+        RowBox[{"Show", "[", 
+         RowBox[{
+          RowBox[{"Graphics3D", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"Gray", ",", "Gray", ",", "Gray", ",", 
+                   RowBox[{"Darker", "@", "Blue"}]}], "}"}], "[", 
+                 RowBox[{"[", "#", "]"}], "]"}], ",", 
+                RowBox[{"PointSize", "[", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{"0.03", ",", "0.03", ",", "0.03", ",", "0.1"}], 
+                   "}"}], "[", 
+                  RowBox[{"[", "#", "]"}], "]"}], "]"}], ",", 
+                RowBox[{"Point", "@", 
+                 RowBox[{"atomPosition", "[", 
+                  RowBox[{"[", "#", "]"}], "]"}]}]}], "}"}], "&"}], "/@", 
+             RowBox[{"Range", "@", "4"}]}], "}"}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Graphics3D", "[", 
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"Red", ",", 
+               RowBox[{"Arrowheads", "[", "0.025", "]"}], ",", 
+               RowBox[{"Arrow", "[", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"atomPosition", "[", 
+                   RowBox[{"[", "i", "]"}], "]"}], ",", 
+                  RowBox[{
+                   RowBox[{"atomPosition", "[", 
+                    RowBox[{"[", "i", "]"}], "]"}], "+", 
+                   RowBox[{
+                    RowBox[{"Cos", "[", "\[Tau]", "]"}], "*", 
+                    RowBox[{"#", "[", 
+                    RowBox[{"[", "i", "]"}], "]"}]}]}]}], "}"}], "]"}]}], 
+              "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"i", ",", "1", ",", 
+               RowBox[{"Length", "@", "atoms"}]}], "}"}]}], "]"}], "]"}], ",", 
+          RowBox[{"PlotRange", "\[Rule]", "2"}], ",", 
+          RowBox[{"ImageSize", "\[Rule]", "300"}]}], "]"}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"\[Tau]", ",", "0", ",", 
+        RowBox[{"6", "\[Pi]"}]}], "}"}], ",", 
+      RowBox[{"AnimationRunning", "\[Rule]", "False"}], ",", 
+      RowBox[{"AnimationDirection", "\[Rule]", "Forward"}], ",", 
+      RowBox[{"AnimationRate", "\[Rule]", "0.25"}]}], "]"}], "&"}], "/@", 
+   "concreteVibrations"}]}]], "Input",
+ CellChangeTimes->{{3.8504720692554*^9, 3.8504720724577713`*^9}, {
+  3.8504722543545866`*^9, 3.850472298292511*^9}, {3.850472335743951*^9, 
+  3.8504723385404053`*^9}, {3.8504724264273276`*^9, 3.850472426614374*^9}, {
+  3.8504724580045958`*^9, 3.850472474186909*^9}, {3.850472654883173*^9, 
+  3.850472704147687*^9}, {3.8504727358031683`*^9, 3.850472741251399*^9}, {
+  3.85047278114577*^9, 3.850472795037478*^9}, {3.8504728884813485`*^9, 
+  3.8504729371942577`*^9}, {3.8504732642965927`*^9, 3.850473291143735*^9}, {
+  3.850473426543214*^9, 3.850473428474403*^9}, {3.8504735299385276`*^9, 
+  3.850473595378106*^9}, {3.850474118325262*^9, 3.8504741751870413`*^9}, {
+  3.850474869632875*^9, 3.850474870524088*^9}},
+ CellLabel->
+  "In[284]:=",ExpressionUUID->"c0144fea-035e-4793-ab83-7dcaf084d26b"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TagBox[
+    StyleBox[
+     DynamicModuleBox[{$CellContext`\[Tau]$$ = 0, Typeset`show$$ = True, 
+      Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+      Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+      "\"untitled\"", Typeset`specs$$ = {{
+        Hold[$CellContext`\[Tau]$$], 0, 6 Pi}}, Typeset`size$$ = {
+      450., {221., 229.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+      Typeset`skipInitDone$$ = True}, 
+      DynamicBox[Manipulate`ManipulateBoxes[
+       1, StandardForm, "Variables" :> {$CellContext`\[Tau]$$ = 0}, 
+        "ControllerVariables" :> {}, 
+        "OtherVariables" :> {
+         Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+          Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+          Typeset`specs$$, Typeset`size$$, Typeset`update$$, 
+          Typeset`initDone$$, Typeset`skipInitDone$$}, "Body" :> 
+        DynamicModule[{$CellContext`atomPosition = $CellContext`orbit + 
+            0.25 Sin[$CellContext`\[Tau]$$] {{1, 0, -1}, {
+                Rational[-1, 2], Rational[1, 2] 3^Rational[1, 2], -1}, {
+                Rational[-1, 2], Rational[-1, 2] 3^Rational[1, 2], -1}, {0, 0,
+                1}}}, 
+          Show[
+           Graphics3D[{
+             Map[{
+               Part[{Gray, Gray, Gray, 
+                 Darker[Blue]}, #], 
+               PointSize[
+                Part[{0.03, 0.03, 0.03, 0.1}, #]], 
+               Point[
+                Part[$CellContext`atomPosition, #]]}& , 
+              Range[4]]}], 
+           Graphics3D[
+            Table[{Red, 
+              Arrowheads[0.025], 
+              Arrow[{
+                Part[$CellContext`atomPosition, GroupTheory`Symbols`i], 
+                Part[$CellContext`atomPosition, GroupTheory`Symbols`i] + 
+                Cos[$CellContext`\[Tau]$$] Part[{{1, 0, -1}, {
+                    Rational[-1, 2], Rational[1, 2] 3^Rational[1, 2], -1}, {
+                    Rational[-1, 2], Rational[-1, 2] 3^Rational[1, 2], -1}, {
+                    0, 0, 1}}, GroupTheory`Symbols`i]}]}, {
+             GroupTheory`Symbols`i, 1, 
+              Length[$CellContext`atoms]}]], PlotRange -> 2, ImageSize -> 
+           300]], "Specifications" :> {{$CellContext`\[Tau]$$, 0, 6 Pi, 
+           AnimationRunning -> False, AnimationDirection -> Forward, 
+           AnimationRate -> 0.25, 
+           AppearanceElements -> {
+            "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+             "DirectionButton"}}}, 
+        "Options" :> {
+         ControlType -> Animator, AppearanceElements -> None, 
+          DefaultBaseStyle -> "Animate", DefaultLabelStyle -> "AnimateLabel", 
+          SynchronousUpdating -> True, ShrinkingDelay -> 10.}, 
+        "DefaultOptions" :> {}],
+       ImageSizeCache->{522., {278., 287.}},
+       SingleEvaluation->True],
+      Deinitialization:>None,
+      DynamicModuleValues:>{},
+      SynchronousInitialization->True,
+      UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+      UnsavedVariables:>{Typeset`initDone$$},
+      UntrackedVariables:>{Typeset`size$$}], "Animate",
+     Deployed->True,
+     StripOnInput->False],
+    Manipulate`InterpretManipulate[1]], ",", 
+   TagBox[
+    StyleBox[
+     DynamicModuleBox[{$CellContext`\[Tau]$$ = 0, Typeset`show$$ = True, 
+      Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+      Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+      "\"untitled\"", Typeset`specs$$ = {{
+        Hold[$CellContext`\[Tau]$$], 0, 6 Pi}}, Typeset`size$$ = {
+      450., {221., 229.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+      Typeset`skipInitDone$$ = True}, 
+      DynamicBox[Manipulate`ManipulateBoxes[
+       1, StandardForm, "Variables" :> {$CellContext`\[Tau]$$ = 0}, 
+        "ControllerVariables" :> {}, 
+        "OtherVariables" :> {
+         Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+          Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+          Typeset`specs$$, Typeset`size$$, Typeset`update$$, 
+          Typeset`initDone$$, Typeset`skipInitDone$$}, "Body" :> 
+        DynamicModule[{$CellContext`atomPosition = $CellContext`orbit + 
+            0.25 Sin[$CellContext`\[Tau]$$] {{1, 0, 1}, {
+                Rational[-1, 2], Rational[1, 2] 3^Rational[1, 2], 1}, {
+                Rational[-1, 2], Rational[-1, 2] 3^Rational[1, 2], 1}, {0, 
+               0, -1}}}, 
+          Show[
+           Graphics3D[{
+             Map[{
+               Part[{Gray, Gray, Gray, 
+                 Darker[Blue]}, #], 
+               PointSize[
+                Part[{0.03, 0.03, 0.03, 0.1}, #]], 
+               Point[
+                Part[$CellContext`atomPosition, #]]}& , 
+              Range[4]]}], 
+           Graphics3D[
+            Table[{Red, 
+              Arrowheads[0.025], 
+              Arrow[{
+                Part[$CellContext`atomPosition, GroupTheory`Symbols`i], 
+                Part[$CellContext`atomPosition, GroupTheory`Symbols`i] + 
+                Cos[$CellContext`\[Tau]$$] Part[{{1, 0, 1}, {
+                    Rational[-1, 2], Rational[1, 2] 3^Rational[1, 2], 1}, {
+                    Rational[-1, 2], Rational[-1, 2] 3^Rational[1, 2], 1}, {0,
+                     0, -1}}, GroupTheory`Symbols`i]}]}, {
+             GroupTheory`Symbols`i, 1, 
+              Length[$CellContext`atoms]}]], PlotRange -> 2, ImageSize -> 
+           300]], "Specifications" :> {{$CellContext`\[Tau]$$, 0, 6 Pi, 
+           AnimationRunning -> False, AnimationDirection -> Forward, 
+           AnimationRate -> 0.25, 
+           AppearanceElements -> {
+            "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+             "DirectionButton"}}}, 
+        "Options" :> {
+         ControlType -> Animator, AppearanceElements -> None, 
+          DefaultBaseStyle -> "Animate", DefaultLabelStyle -> "AnimateLabel", 
+          SynchronousUpdating -> True, ShrinkingDelay -> 10.}, 
+        "DefaultOptions" :> {}],
+       ImageSizeCache->{522., {278., 287.}},
+       SingleEvaluation->True],
+      Deinitialization:>None,
+      DynamicModuleValues:>{},
+      SynchronousInitialization->True,
+      UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+      UnsavedVariables:>{Typeset`initDone$$},
+      UntrackedVariables:>{Typeset`size$$}], "Animate",
+     Deployed->True,
+     StripOnInput->False],
+    Manipulate`InterpretManipulate[1]], ",", 
+   TagBox[
+    StyleBox[
+     DynamicModuleBox[{$CellContext`\[Tau]$$ = 15.947071774246583`, 
+      Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+      Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ =
+       1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+        Hold[$CellContext`\[Tau]$$], 0, 6 Pi}}, Typeset`size$$ = {
+      450., {221., 229.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+      Typeset`skipInitDone$$ = True}, 
+      DynamicBox[Manipulate`ManipulateBoxes[
+       1, StandardForm, "Variables" :> {$CellContext`\[Tau]$$ = 0}, 
+        "ControllerVariables" :> {}, 
+        "OtherVariables" :> {
+         Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+          Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+          Typeset`specs$$, Typeset`size$$, Typeset`update$$, 
+          Typeset`initDone$$, Typeset`skipInitDone$$}, "Body" :> 
+        DynamicModule[{$CellContext`atomPosition = $CellContext`orbit + 
+            0.25 Sin[$CellContext`\[Tau]$$] {{0, 0, 1}, {
+                Rational[-3, 4], Rational[-1, 4] 3^Rational[1, 2], 
+                Rational[-1, 2]}, {
+                Rational[-3, 4], Rational[1, 4] 3^Rational[1, 2], 
+                Rational[-1, 2]}, {0, 0, 0}}}, 
+          Show[
+           Graphics3D[{
+             Map[{
+               Part[{Gray, Gray, Gray, 
+                 Darker[Blue]}, #], 
+               PointSize[
+                Part[{0.03, 0.03, 0.03, 0.1}, #]], 
+               Point[
+                Part[$CellContext`atomPosition, #]]}& , 
+              Range[4]]}], 
+           Graphics3D[
+            Table[{Red, 
+              Arrowheads[0.025], 
+              Arrow[{
+                Part[$CellContext`atomPosition, GroupTheory`Symbols`i], 
+                Part[$CellContext`atomPosition, GroupTheory`Symbols`i] + 
+                Cos[$CellContext`\[Tau]$$] Part[{{0, 0, 1}, {
+                    Rational[-3, 4], Rational[-1, 4] 3^Rational[1, 2], 
+                    Rational[-1, 2]}, {
+                    Rational[-3, 4], Rational[1, 4] 3^Rational[1, 2], 
+                    Rational[-1, 2]}, {0, 0, 0}}, GroupTheory`Symbols`i]}]}, {
+             GroupTheory`Symbols`i, 1, 
+              Length[$CellContext`atoms]}]], PlotRange -> 2, ImageSize -> 
+           300]], "Specifications" :> {{$CellContext`\[Tau]$$, 0, 6 Pi, 
+           AnimationRunning -> False, AnimationDirection -> Forward, 
+           AnimationRate -> 0.25, 
+           AppearanceElements -> {
+            "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+             "DirectionButton"}}}, 
+        "Options" :> {
+         ControlType -> Animator, AppearanceElements -> None, 
+          DefaultBaseStyle -> "Animate", DefaultLabelStyle -> "AnimateLabel", 
+          SynchronousUpdating -> True, ShrinkingDelay -> 10.}, 
+        "DefaultOptions" :> {}],
+       ImageSizeCache->{522., {278., 287.}},
+       SingleEvaluation->True],
+      Deinitialization:>None,
+      DynamicModuleValues:>{},
+      SynchronousInitialization->True,
+      UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+      UnsavedVariables:>{Typeset`initDone$$},
+      UntrackedVariables:>{Typeset`size$$}], "Animate",
+     Deployed->True,
+     StripOnInput->False],
+    Manipulate`InterpretManipulate[1]], ",", 
+   TagBox[
+    StyleBox[
+     DynamicModuleBox[{$CellContext`\[Tau]$$ = 15.333332652337237`, 
+      Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+      Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ =
+       1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+        Hold[$CellContext`\[Tau]$$], 0, 6 Pi}}, Typeset`size$$ = {
+      450., {221., 229.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+      Typeset`skipInitDone$$ = True}, 
+      DynamicBox[Manipulate`ManipulateBoxes[
+       1, StandardForm, "Variables" :> {$CellContext`\[Tau]$$ = 0}, 
+        "ControllerVariables" :> {}, 
+        "OtherVariables" :> {
+         Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+          Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+          Typeset`specs$$, Typeset`size$$, Typeset`update$$, 
+          Typeset`initDone$$, Typeset`skipInitDone$$}, "Body" :> 
+        DynamicModule[{$CellContext`atomPosition = $CellContext`orbit + 
+            0.25 Sin[$CellContext`\[Tau]$$] {{0, 1, 0}, {
+               Rational[1, 4] 3^Rational[1, 2], 
+                Rational[1, 4], Rational[1, 2] 3^Rational[1, 2]}, {
+               Rational[-1, 4] 3^Rational[1, 2], 
+                Rational[1, 4], Rational[-1, 2] 3^Rational[1, 2]}, {0, 0, 
+               0}}}, 
+          Show[
+           Graphics3D[{
+             Map[{
+               Part[{Gray, Gray, Gray, 
+                 Darker[Blue]}, #], 
+               PointSize[
+                Part[{0.03, 0.03, 0.03, 0.1}, #]], 
+               Point[
+                Part[$CellContext`atomPosition, #]]}& , 
+              Range[4]]}], 
+           Graphics3D[
+            Table[{Red, 
+              Arrowheads[0.025], 
+              Arrow[{
+                Part[$CellContext`atomPosition, GroupTheory`Symbols`i], 
+                Part[$CellContext`atomPosition, GroupTheory`Symbols`i] + 
+                Cos[$CellContext`\[Tau]$$] 
+                 Part[{{0, 1, 0}, {Rational[1, 4] 3^Rational[1, 2], 
+                    Rational[1, 4], Rational[1, 2] 3^Rational[1, 2]}, {
+                    Rational[-1, 4] 3^Rational[1, 2], 
+                    Rational[1, 4], Rational[-1, 2] 3^Rational[1, 2]}, {0, 0, 
+                    0}}, GroupTheory`Symbols`i]}]}, {GroupTheory`Symbols`i, 1, 
+              Length[$CellContext`atoms]}]], PlotRange -> 2, ImageSize -> 
+           300]], "Specifications" :> {{$CellContext`\[Tau]$$, 0, 6 Pi, 
+           AnimationRunning -> False, AnimationDirection -> Forward, 
+           AnimationRate -> 0.25, 
+           AppearanceElements -> {
+            "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+             "DirectionButton"}}}, 
+        "Options" :> {
+         ControlType -> Animator, AppearanceElements -> None, 
+          DefaultBaseStyle -> "Animate", DefaultLabelStyle -> "AnimateLabel", 
+          SynchronousUpdating -> True, ShrinkingDelay -> 10.}, 
+        "DefaultOptions" :> {}],
+       ImageSizeCache->{522., {278., 287.}},
+       SingleEvaluation->True],
+      Deinitialization:>None,
+      DynamicModuleValues:>{},
+      SynchronousInitialization->True,
+      UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+      UnsavedVariables:>{Typeset`initDone$$},
+      UntrackedVariables:>{Typeset`size$$}], "Animate",
+     Deployed->True,
+     StripOnInput->False],
+    Manipulate`InterpretManipulate[1]], ",", 
+   TagBox[
+    StyleBox[
+     DynamicModuleBox[{$CellContext`\[Tau]$$ = 0, Typeset`show$$ = True, 
+      Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+      Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+      "\"untitled\"", Typeset`specs$$ = {{
+        Hold[$CellContext`\[Tau]$$], 0, 6 Pi}}, Typeset`size$$ = {
+      450., {221., 229.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+      Typeset`skipInitDone$$ = True}, 
+      DynamicBox[Manipulate`ManipulateBoxes[
+       1, StandardForm, "Variables" :> {$CellContext`\[Tau]$$ = 0}, 
+        "ControllerVariables" :> {}, 
+        "OtherVariables" :> {
+         Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+          Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+          Typeset`specs$$, Typeset`size$$, Typeset`update$$, 
+          Typeset`initDone$$, Typeset`skipInitDone$$}, "Body" :> 
+        DynamicModule[{$CellContext`atomPosition = $CellContext`orbit + 
+            0.25 Sin[$CellContext`\[Tau]$$] {{0, 0, 0}, {
+                Rational[-3, 4], Rational[-1, 4] 3^Rational[1, 2], 0}, {
+                Rational[-3, 4], Rational[1, 4] 3^Rational[1, 2], 0}, {1, 0, 
+               0}}}, 
+          Show[
+           Graphics3D[{
+             Map[{
+               Part[{Gray, Gray, Gray, 
+                 Darker[Blue]}, #], 
+               PointSize[
+                Part[{0.03, 0.03, 0.03, 0.1}, #]], 
+               Point[
+                Part[$CellContext`atomPosition, #]]}& , 
+              Range[4]]}], 
+           Graphics3D[
+            Table[{Red, 
+              Arrowheads[0.025], 
+              Arrow[{
+                Part[$CellContext`atomPosition, GroupTheory`Symbols`i], 
+                Part[$CellContext`atomPosition, GroupTheory`Symbols`i] + 
+                Cos[$CellContext`\[Tau]$$] Part[{{0, 0, 0}, {
+                    Rational[-3, 4], Rational[-1, 4] 3^Rational[1, 2], 0}, {
+                    Rational[-3, 4], Rational[1, 4] 3^Rational[1, 2], 0}, {1, 
+                    0, 0}}, GroupTheory`Symbols`i]}]}, {
+             GroupTheory`Symbols`i, 1, 
+              Length[$CellContext`atoms]}]], PlotRange -> 2, ImageSize -> 
+           300]], "Specifications" :> {{$CellContext`\[Tau]$$, 0, 6 Pi, 
+           AnimationRunning -> False, AnimationDirection -> Forward, 
+           AnimationRate -> 0.25, 
+           AppearanceElements -> {
+            "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+             "DirectionButton"}}}, 
+        "Options" :> {
+         ControlType -> Animator, AppearanceElements -> None, 
+          DefaultBaseStyle -> "Animate", DefaultLabelStyle -> "AnimateLabel", 
+          SynchronousUpdating -> True, ShrinkingDelay -> 10.}, 
+        "DefaultOptions" :> {}],
+       ImageSizeCache->{522., {278., 287.}},
+       SingleEvaluation->True],
+      Deinitialization:>None,
+      DynamicModuleValues:>{},
+      SynchronousInitialization->True,
+      UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+      UnsavedVariables:>{Typeset`initDone$$},
+      UntrackedVariables:>{Typeset`size$$}], "Animate",
+     Deployed->True,
+     StripOnInput->False],
+    Manipulate`InterpretManipulate[1]], ",", 
+   TagBox[
+    StyleBox[
+     DynamicModuleBox[{$CellContext`\[Tau]$$ = 5.763072193329281, 
+      Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+      Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ =
+       1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+        Hold[$CellContext`\[Tau]$$], 0, 6 Pi}}, Typeset`size$$ = {
+      450., {221., 229.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+      Typeset`skipInitDone$$ = True}, 
+      DynamicBox[Manipulate`ManipulateBoxes[
+       1, StandardForm, "Variables" :> {$CellContext`\[Tau]$$ = 0}, 
+        "ControllerVariables" :> {}, 
+        "OtherVariables" :> {
+         Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+          Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+          Typeset`specs$$, Typeset`size$$, Typeset`update$$, 
+          Typeset`initDone$$, Typeset`skipInitDone$$}, "Body" :> 
+        DynamicModule[{$CellContext`atomPosition = $CellContext`orbit + 
+            0.25 Sin[$CellContext`\[Tau]$$] {{0, 1, 0}, {
+               Rational[1, 4] 3^Rational[1, 2], 
+                Rational[1, 4], 0}, {Rational[-1, 4] 3^Rational[1, 2], 
+                Rational[1, 4], 0}, {0, 1, 0}}}, 
+          Show[
+           Graphics3D[{
+             Map[{
+               Part[{Gray, Gray, Gray, 
+                 Darker[Blue]}, #], 
+               PointSize[
+                Part[{0.03, 0.03, 0.03, 0.1}, #]], 
+               Point[
+                Part[$CellContext`atomPosition, #]]}& , 
+              Range[4]]}], 
+           Graphics3D[
+            Table[{Red, 
+              Arrowheads[0.025], 
+              Arrow[{
+                Part[$CellContext`atomPosition, GroupTheory`Symbols`i], 
+                Part[$CellContext`atomPosition, GroupTheory`Symbols`i] + 
+                Cos[$CellContext`\[Tau]$$] 
+                 Part[{{0, 1, 0}, {Rational[1, 4] 3^Rational[1, 2], 
+                    Rational[1, 4], 0}, {Rational[-1, 4] 3^Rational[1, 2], 
+                    Rational[1, 4], 0}, {0, 1, 0}}, 
+                   GroupTheory`Symbols`i]}]}, {GroupTheory`Symbols`i, 1, 
+              Length[$CellContext`atoms]}]], PlotRange -> 2, ImageSize -> 
+           300]], "Specifications" :> {{$CellContext`\[Tau]$$, 0, 6 Pi, 
+           AnimationRunning -> False, AnimationDirection -> Forward, 
+           AnimationRate -> 0.25, 
+           AppearanceElements -> {
+            "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+             "DirectionButton"}}}, 
+        "Options" :> {
+         ControlType -> Animator, AppearanceElements -> None, 
+          DefaultBaseStyle -> "Animate", DefaultLabelStyle -> "AnimateLabel", 
+          SynchronousUpdating -> True, ShrinkingDelay -> 10.}, 
+        "DefaultOptions" :> {}],
+       ImageSizeCache->{522., {278., 287.}},
+       SingleEvaluation->True],
+      Deinitialization:>None,
+      DynamicModuleValues:>{},
+      SynchronousInitialization->True,
+      UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+      UnsavedVariables:>{Typeset`initDone$$},
+      UntrackedVariables:>{Typeset`size$$}], "Animate",
+     Deployed->True,
+     StripOnInput->False],
+    Manipulate`InterpretManipulate[1]]}], "}"}]], "Output",
+ CellChangeTimes->{{3.8504742785271873`*^9, 3.850474288049653*^9}, 
+   3.850474353533496*^9, 3.8504744060965996`*^9, 3.85047477970068*^9, {
+   3.850474861124175*^9, 3.8504748928474073`*^9}, 3.8504749574371743`*^9, {
+   3.850475109963348*^9, 3.8504751305981197`*^9}, 3.850475262388272*^9, 
+   3.85047558401619*^9, {3.850475635814849*^9, 3.8504756599675007`*^9}, 
+   3.85047570049701*^9, 3.8504757340088615`*^9, 3.850475830617688*^9, 
+   3.8504758954695187`*^9, 3.850475967543704*^9},
+ CellLabel->
+  "Out[284]=",ExpressionUUID->"000d8293-78c0-4b0a-b4e5-4aeb588560c3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{
+  "\"\<C:\\Users\\Misa\\Desktop\\vibrationAnimation.avi\>\"", ",", "m", ",", 
+   RowBox[{"FrameRate", "\[Rule]", "10"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8504730239373665`*^9, 3.8504730538697643`*^9}},
+ EmphasizeSyntaxErrors->True,
+ CellLabel->
+  "In[195]:=",ExpressionUUID->"839d4d28-77bd-42a9-bbcf-3c433796ce96"],
+
+Cell[BoxData["\<\"C:\\\\Users\\\\Misa\\\\Desktop\\\\vibrationAnimation.avi\"\>\
+"], "Output",
+ CellChangeTimes->{
+  3.850472843421483*^9, 3.850472956199342*^9, {3.8504730410951586`*^9, 
+   3.8504730621846666`*^9}, 3.85047310834826*^9},
+ CellLabel->
+  "Out[195]=",ExpressionUUID->"0b96e1a9-23e6-45f8-a09b-b6741e0f02c8"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -3907,28 +4682,42 @@ Cell[CellGroupData[{
 Cell[118952, 3122, 2932, 78, 253, "Input",ExpressionUUID->"e44347d0-cb24-49b2-a108-43d8590925e1"],
 Cell[121887, 3202, 2263, 50, 199, "Output",ExpressionUUID->"85afe9ff-e4b0-4087-8b12-e96593e2e0c8"]
 }, Open  ]],
-Cell[124165, 3255, 646, 19, 52, "Text",ExpressionUUID->"e81974ab-7419-4da1-9a8c-6709de1fc1bc"],
+Cell[124165, 3255, 974, 27, 88, "Text",ExpressionUUID->"e81974ab-7419-4da1-9a8c-6709de1fc1bc"],
 Cell[CellGroupData[{
-Cell[124836, 3278, 5360, 178, 354, "Input",ExpressionUUID->"6f6e0b8f-1b8d-44e4-aa3e-2a4fbb3987e2"],
-Cell[130199, 3458, 460, 13, 75, "Output",ExpressionUUID->"e82d4020-8f90-4612-9ae2-53401ab86477"],
-Cell[130662, 3473, 462, 13, 75, "Output",ExpressionUUID->"88aa6f99-f45b-4631-bc38-19cc85c9fd92"],
-Cell[131127, 3488, 500, 15, 75, "Output",ExpressionUUID->"a3495ba7-d683-434b-8b98-ab05e2b9d7a2"],
-Cell[131630, 3505, 460, 13, 75, "Output",ExpressionUUID->"33be5f89-b098-4459-828a-fad22599b9de"],
-Cell[132093, 3520, 404, 9, 69, "Output",ExpressionUUID->"57e7b586-014e-4b27-8228-9fa1d98d4461"],
-Cell[132500, 3531, 413, 10, 75, "Output",ExpressionUUID->"8184af32-ffc4-4295-9570-0c4ffd39dcc8"],
-Cell[132916, 3543, 327, 7, 49, "Output",ExpressionUUID->"a27fe7f2-a212-4ef6-a33c-fa6ea7756025"],
-Cell[133246, 3552, 327, 7, 49, "Output",ExpressionUUID->"1a0bff64-aca7-49c2-a805-814ee90f64c9"]
+Cell[125164, 3286, 5360, 178, 354, "Input",ExpressionUUID->"6f6e0b8f-1b8d-44e4-aa3e-2a4fbb3987e2"],
+Cell[130527, 3466, 460, 13, 75, "Output",ExpressionUUID->"e82d4020-8f90-4612-9ae2-53401ab86477"],
+Cell[130990, 3481, 462, 13, 75, "Output",ExpressionUUID->"88aa6f99-f45b-4631-bc38-19cc85c9fd92"],
+Cell[131455, 3496, 500, 15, 75, "Output",ExpressionUUID->"a3495ba7-d683-434b-8b98-ab05e2b9d7a2"],
+Cell[131958, 3513, 460, 13, 75, "Output",ExpressionUUID->"33be5f89-b098-4459-828a-fad22599b9de"],
+Cell[132421, 3528, 404, 9, 69, "Output",ExpressionUUID->"57e7b586-014e-4b27-8228-9fa1d98d4461"],
+Cell[132828, 3539, 413, 10, 75, "Output",ExpressionUUID->"8184af32-ffc4-4295-9570-0c4ffd39dcc8"],
+Cell[133244, 3551, 327, 7, 49, "Output",ExpressionUUID->"a27fe7f2-a212-4ef6-a33c-fa6ea7756025"],
+Cell[133574, 3560, 327, 7, 49, "Output",ExpressionUUID->"1a0bff64-aca7-49c2-a805-814ee90f64c9"]
 }, Open  ]],
-Cell[133588, 3562, 875, 20, 94, "Text",ExpressionUUID->"66077cd7-b1c2-49db-a03b-575b68f5c16f"],
+Cell[133916, 3570, 875, 20, 94, "Text",ExpressionUUID->"66077cd7-b1c2-49db-a03b-575b68f5c16f"],
 Cell[CellGroupData[{
-Cell[134488, 3586, 5549, 124, 161, "Input",ExpressionUUID->"7a5166ce-1375-488e-94ff-4aa2c6d3dc50"],
-Cell[140040, 3712, 3596, 81, 900, "Output",ExpressionUUID->"d1710717-4912-4f43-9d5b-4a7275777e5d"]
+Cell[134816, 3594, 5597, 125, 161, "Input",ExpressionUUID->"7a5166ce-1375-488e-94ff-4aa2c6d3dc50"],
+Cell[140416, 3721, 3646, 82, 885, "Output",ExpressionUUID->"489c31ef-c059-44ea-955b-3238cf5d6b23"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[144099, 3808, 189, 3, 43, "Input",ExpressionUUID->"dcfaff2f-8b24-410f-8c8e-4be083edfe59"],
+Cell[144291, 3813, 306, 8, 49, "Output",ExpressionUUID->"b7c039d9-4546-4e44-9a10-380eac7f78c7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[144634, 3826, 3490, 82, 218, "Input",ExpressionUUID->"891f500f-99f7-4fe7-a729-1b231b974cd5"],
+Cell[148127, 3910, 4371, 138, 191, "Output",ExpressionUUID->"f35be6db-f39d-457f-8a02-6eacfcbd6d98"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[152535, 4053, 3582, 80, 131, "Input",ExpressionUUID->"c0144fea-035e-4793-ab83-7dcaf084d26b"],
+Cell[156120, 4135, 20130, 412, 1204, "Output",ExpressionUUID->"000d8293-78c0-4b0a-b4e5-4aeb588560c3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[176287, 4552, 372, 8, 43, "Input",ExpressionUUID->"839d4d28-77bd-42a9-bbcf-3c433796ce96"],
+Cell[176662, 4562, 318, 6, 49, "Output",ExpressionUUID->"0b96e1a9-23e6-45f8-a09b-b6741e0f02c8"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
